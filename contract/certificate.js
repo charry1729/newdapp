@@ -37,6 +37,7 @@
     // buffer.writeString(mid)
     // buffer.writeInt(0)
     // buffer.flip()
+    
     let bytes = buffer.toBuffer()
     let secret = 'offer cry duck relief work nerve concert penalty demand impulse bonus vague';
     function signBytes(bytes, secret) {

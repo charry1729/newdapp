@@ -15878,3 +15878,171 @@
 2018-10-09T14:41:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
 2018-10-09T14:41:20+0530 <debug> sequence.js:1 (i) Main sequence out 54 func 
 2018-10-09T14:41:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:41:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 55 func 
+2018-10-09T14:41:30+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169783 }
+2018-10-09T14:41:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 56 func 
+2018-10-09T14:41:30+0530 <debug> sequence.js:1 (i) Main sequence out 55 func 
+2018-10-09T14:41:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:41:30+0530 <debug> sequence.js:1 (i) Main sequence out 56 func 
+2018-10-09T14:41:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:41:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 57 func 
+2018-10-09T14:41:40+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169783 }
+2018-10-09T14:41:40+0530 <debug> sequence.js:1 (i) Main sequence out 57 func 
+2018-10-09T14:41:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:41:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 58 func 
+2018-10-09T14:41:40+0530 <debug> sequence.js:1 (i) Main sequence out 58 func 
+2018-10-09T14:41:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:41:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 59 func 
+2018-10-09T14:41:50+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169785 }
+2018-10-09T14:41:50+0530 <debug> sequence.js:1 (i) Main sequence out 59 func 
+2018-10-09T14:41:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:41:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 60 func 
+2018-10-09T14:41:50+0530 <debug> sequence.js:1 (i) Main sequence out 60 func 
+2018-10-09T14:41:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 61 func 
+2018-10-09T14:42:00+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169785 }
+2018-10-09T14:42:00+0530 <debug> sequence.js:1 (i) Main sequence out 61 func 
+2018-10-09T14:42:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 62 func 
+2018-10-09T14:42:00+0530 <debug> sequence.js:1 (i) Main sequence out 62 func 
+2018-10-09T14:42:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 63 func 
+2018-10-09T14:42:10+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169787 }
+2018-10-09T14:42:10+0530 <debug> sequence.js:1 (i) Main sequence out 63 func 
+2018-10-09T14:42:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 64 func 
+2018-10-09T14:42:10+0530 <debug> sequence.js:1 (i) Main sequence out 64 func 
+2018-10-09T14:42:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 65 func 
+2018-10-09T14:42:20+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169787 }
+2018-10-09T14:42:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 66 func 
+2018-10-09T14:42:20+0530 <debug> sequence.js:1 (i) Main sequence out 65 func 
+2018-10-09T14:42:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:20+0530 <debug> sequence.js:1 (i) Main sequence out 66 func 
+2018-10-09T14:42:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 67 func 
+2018-10-09T14:42:30+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169787 }
+2018-10-09T14:42:30+0530 <debug> sequence.js:1 (i) Main sequence out 67 func 
+2018-10-09T14:42:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 68 func 
+2018-10-09T14:42:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:30+0530 <debug> sequence.js:1 (i) Main sequence out 68 func 
+2018-10-09T14:42:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 69 func 
+2018-10-09T14:42:40+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169789 }
+2018-10-09T14:42:40+0530 <debug> sequence.js:1 (i) Main sequence out 69 func 
+2018-10-09T14:42:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 70 func 
+2018-10-09T14:42:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:40+0530 <debug> sequence.js:1 (i) Main sequence out 70 func 
+2018-10-09T14:42:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:42:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 71 func 
+2018-10-09T14:42:50+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169789 }
+2018-10-09T14:42:50+0530 <debug> sequence.js:1 (i) Main sequence out 71 func 
+2018-10-09T14:42:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 72 func 
+2018-10-09T14:42:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:42:50+0530 <debug> sequence.js:1 (i) Main sequence out 72 func 
+2018-10-09T14:42:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 73 func 
+2018-10-09T14:43:00+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169789 }
+2018-10-09T14:43:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 74 func 
+2018-10-09T14:43:00+0530 <debug> sequence.js:1 (i) Main sequence out 73 func 
+2018-10-09T14:43:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:00+0530 <debug> sequence.js:1 (i) Main sequence out 74 func 
+2018-10-09T14:43:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 75 func 
+2018-10-09T14:43:10+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169791 }
+2018-10-09T14:43:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 76 func 
+2018-10-09T14:43:10+0530 <debug> sequence.js:1 (i) Main sequence out 75 func 
+2018-10-09T14:43:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:10+0530 <debug> sequence.js:1 (i) Main sequence out 76 func 
+2018-10-09T14:43:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 77 func 
+2018-10-09T14:43:20+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169791 }
+2018-10-09T14:43:20+0530 <debug> sequence.js:1 (i) Main sequence out 77 func 
+2018-10-09T14:43:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 78 func 
+2018-10-09T14:43:20+0530 <debug> sequence.js:1 (i) Main sequence out 78 func 
+2018-10-09T14:43:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 79 func 
+2018-10-09T14:43:30+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169791 }
+2018-10-09T14:43:30+0530 <debug> sequence.js:1 (i) Main sequence out 79 func 
+2018-10-09T14:43:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 80 func 
+2018-10-09T14:43:30+0530 <debug> sequence.js:1 (i) Main sequence out 80 func 
+2018-10-09T14:43:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 81 func 
+2018-10-09T14:43:40+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169793 }
+2018-10-09T14:43:40+0530 <debug> sequence.js:1 (i) Main sequence out 81 func 
+2018-10-09T14:43:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 82 func 
+2018-10-09T14:43:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:40+0530 <debug> sequence.js:1 (i) Main sequence out 82 func 
+2018-10-09T14:43:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:43:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 83 func 
+2018-10-09T14:43:50+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169793 }
+2018-10-09T14:43:50+0530 <debug> sequence.js:1 (i) Main sequence out 83 func 
+2018-10-09T14:43:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:43:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 84 func 
+2018-10-09T14:43:50+0530 <debug> sequence.js:1 (i) Main sequence out 84 func 
+2018-10-09T14:43:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 85 func 
+2018-10-09T14:44:00+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169793 }
+2018-10-09T14:44:00+0530 <debug> sequence.js:1 (i) Main sequence out 85 func 
+2018-10-09T14:44:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 86 func 
+2018-10-09T14:44:00+0530 <debug> sequence.js:1 (i) Main sequence out 86 func 
+2018-10-09T14:44:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 87 func 
+2018-10-09T14:44:10+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169795 }
+2018-10-09T14:44:10+0530 <debug> sequence.js:1 (i) Main sequence out 87 func 
+2018-10-09T14:44:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 88 func 
+2018-10-09T14:44:10+0530 <debug> sequence.js:1 (i) Main sequence out 88 func 
+2018-10-09T14:44:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 89 func 
+2018-10-09T14:44:20+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169795 }
+2018-10-09T14:44:20+0530 <debug> sequence.js:1 (i) Main sequence out 89 func 
+2018-10-09T14:44:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 90 func 
+2018-10-09T14:44:20+0530 <debug> sequence.js:1 (i) Main sequence out 90 func 
+2018-10-09T14:44:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 91 func 
+2018-10-09T14:44:30+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169795 }
+2018-10-09T14:44:30+0530 <debug> sequence.js:1 (i) Main sequence out 91 func 
+2018-10-09T14:44:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 92 func 
+2018-10-09T14:44:30+0530 <debug> sequence.js:1 (i) Main sequence out 92 func 
+2018-10-09T14:44:30+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 93 func 
+2018-10-09T14:44:40+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169797 }
+2018-10-09T14:44:40+0530 <debug> sequence.js:1 (i) Main sequence out 93 func 
+2018-10-09T14:44:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 94 func 
+2018-10-09T14:44:40+0530 <debug> sequence.js:1 (i) Main sequence out 94 func 
+2018-10-09T14:44:40+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:44:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 95 func 
+2018-10-09T14:44:50+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169797 }
+2018-10-09T14:44:50+0530 <debug> sequence.js:1 (i) Main sequence out 95 func 
+2018-10-09T14:44:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:44:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 96 func 
+2018-10-09T14:44:50+0530 <debug> sequence.js:1 (i) Main sequence out 96 func 
+2018-10-09T14:44:50+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:45:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 97 func 
+2018-10-09T14:45:00+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169797 }
+2018-10-09T14:45:00+0530 <debug> sequence.js:1 (i) Main sequence out 97 func 
+2018-10-09T14:45:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:45:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 98 func 
+2018-10-09T14:45:00+0530 <debug> sequence.js:1 (i) Main sequence out 98 func 
+2018-10-09T14:45:00+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:45:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 99 func 
+2018-10-09T14:45:10+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169799 }
+2018-10-09T14:45:10+0530 <debug> sequence.js:1 (i) Main sequence out 99 func 
+2018-10-09T14:45:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:45:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 100 func 
+2018-10-09T14:45:10+0530 <debug> sequence.js:1 (i) Main sequence out 100 func 
+2018-10-09T14:45:10+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
+2018-10-09T14:45:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 101 func 
+2018-10-09T14:45:20+0530 <info> sync.js:1 (Immediate.<anonymous>) get main block height { height: 169799 }
+2018-10-09T14:45:20+0530 <debug> sequence.js:1 (i) Main sequence out 101 func 
+2018-10-09T14:45:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: No peers in db
+2018-10-09T14:45:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 102 func 
+2018-10-09T14:45:20+0530 <debug> sequence.js:1 (i) Main sequence out 102 func 
+2018-10-09T14:45:20+0530 <error> sync.js:1 (Immediate.<anonymous>) Sync#transactionsSync timer No peers in db
