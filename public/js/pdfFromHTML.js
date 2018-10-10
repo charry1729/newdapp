@@ -1,5 +1,6 @@
 function HTMLtoPDF(){
-var pdf = new jsPDF('p', 'pt', 'letter');
+//var pdf = new jsPDF('l', 'pt', 'legal');
+var pdf = new jsPDF();
 source = $('#HTMLtoPDF')[0];
 specialElementHandlers = {
 	'#bypassme': function(element, renderer){
@@ -22,7 +23,7 @@ pdf.fromHTML(
   	function (dispose) {
   	  // dispose: object with X, Y of the last line add to the PDF
   	  //          this allow the insertion of new lines after html
-        pdf.save('html2pdf.pdf');
+        pdf.save('BC-Certificate.pdf');
       }
   )		
 }

@@ -25,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Belfrics Certificate Dapp</a>
+      <a class="navbar-brand" href="#" >BELFRICS CERTIFICATE DAPP</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 <button type="button" class="btn btn-danger pull-right">Sign Out</button>
@@ -59,26 +59,27 @@
                 </div>
                   </div>
                   <div id="certData">
-          <ul>
-                     <li>Date of Course Completion: <span id="DOI"></span></li>
-                     <li>Issued to: <span id="stu"></span></li>
-                     <li>Issued by: <span id="issuer"></span></li>
+                   <ul>
+                     <li>Date of Course Completion: ret.DOI1</li>
+                     <li>Issued to: ret.stu1</li>
+                     <li>Issued by: ret.issuer1</li>
                      <li>Signed by: </li>
-                     <li>Title: <span id="course"></span></li>
+                     <li>Title: ret.course1</li>
                      <li>Verified: YES</li>
-                     <li>Verification link: <a href="node1.belrium.io/api/dapps/">Verify</a></li>
+                     <li>Verification link: <a href="#">Verify</a></li>
                      <li>Blockchain Address:</li>
                    </ul>
+
                   </div>
+
+
                    <p style="font-size: 12px;font-weight: bold;margin-left: 30px;text-align: center"> This certificate is valid as of 18/10/2018. issuer of ACCESS used his public/ private key pair on the Belrium bloackchain to issue this certificate on 2 Oct 2018. This certificate was issued using Belfrics Smart Contract as Service Platform.</p>
                    <p style="font-size: 10px;margin-left: 30px;text-align: center"> Belfrics makes digital certificate fast and secure. We use smart contracts and blockchain techonology to create audit trails of all transaction.</p>
                   <br><br>
 
                   </div>
                   </div> 
-
                   
- 
         <div class="form-group" style="text-align:center">
         
       </div>
@@ -89,20 +90,7 @@
   
 
   <script type="text/javascript">
-   
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var queries = queryString.split("&");
-   
-var DOI1=queries[0].split("=");
-var stu1=queries[1].split("=");
-var issuer1=queries[2].split("=");
-var course1=queries[3].split("=");
 
-document.getElementById("DOI").innerHTML = DOI1[1];
-document.getElementById("stu").innerHTML = stu1[1];
-document.getElementById("issuer").innerHTML = issuer1[1];
-document.getElementById("course").innerHTML = course1[1];
     function ShowData() {
                  $.ajax({
               type: 'GET',
@@ -144,11 +132,35 @@ document.getElementById("course").innerHTML = course1[1];
            $('#trainername').html(dataJson.trainername);
      }
 
+    var DAPP_ID =  '27566d2d1464d1ca9964662027c4ac317bf3d6fcd1f23dc97ecabd1975b8dd09';
+     //window.location.pathname.split('/')[2];
+        console.log("DAPP_ID: "+DAPP_ID);
+        var BASE_URL = 'http://localhost:9305/api/dapps/' + DAPP_ID;
+    var EID2   = document.getElementById("txtEID").value;
+    function Verify(ret){
+      document.getElementById("Downloadbtn").disabled = false;
+      console.log("came here");
+        $.ajax({
+              type: 'GET',
+              url: BASE_URL + '/certificate/:enrollmentId',
+              data: EID2,
+              dataType: 'json',
+              success: function(ret) {
+                  console.log(ret);
+                  
+                  if (!ret.success) {
+                      alert('Error: ' + ret.error);
+                      return;
+                  }
+                  alert("Success! " + ret.stu1);
+             //     Verify(ret);
+                  console.log("ret : "+ret);
+                }
+            });         
+     }
 
   </script>
  
-
-
 <div class="container-fluid">
                 
     <div class="col-md-6">
@@ -193,9 +205,7 @@ document.getElementById("course").innerHTML = course1[1];
   <script src="js/jspdf.js"></script>
   <script src="js/jquery-2.1.3.js"></script>
   <script src="js/pdfFromHTML.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-
+  <script src="js/bootstrap.js"></script>
 </body>
 </html>
 

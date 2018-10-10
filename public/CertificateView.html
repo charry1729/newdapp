@@ -93,22 +93,20 @@
       </div>
 </div>
 
-  <script language="javascript">
+<script language="javascript">
             var DAPP_ID =  '27566d2d1464d1ca9964662027c4ac317bf3d6fcd1f23dc97ecabd1975b8dd09';
         //window.location.pathname.split('/')[2];
         console.log("DAPP_ID: "+DAPP_ID);
         var BASE_URL = 'http://localhost:9305/api/dapps/' + DAPP_ID;
 
     var EID2   = document.getElementById("txtEID").value;
-   // var args = JSON.stringify(EID3);
-   //     console.log("args   :"+args);
-    function Verify(EID2){
+    function Verify(ret){
     	document.getElementById("Downloadbtn").disabled = false;
       console.log("came here");
         $.ajax({
               type: 'GET',
               url: BASE_URL + '/certificate/:enrollmentId',
-              data: JSON.stringify([EID3]),
+              data: EID2,
               dataType: 'json',
               success: function(ret) {
                   console.log(ret);
@@ -117,27 +115,33 @@
                       alert('Error: ' + ret.error);
                       return;
                   }
-                  alert("Success! " + ret.id);
+               //   alert("Success! " + ret.id);
              //     Verify(ret);
                   console.log("ret : "+ret);
                 }
             });
+	//var obj1={DOI1:"doi",stu1:"jyotsna",issuer1:"chary",course1:"blockchain"};
+	//var queryString = "?DOI1=" + obj1.DOI1 + "&stu1=" + obj1.stu1 + "&issuer1=" +obj1.issuer1 + "&course1=" +obj1.course1;	
+	var queryString = "?DOI1=" + ret.DOI1 + "&stu1=" + ret.stu1 + "&issuer1=" +ret.issuer1 + "&course1=" +ret.course1;
+	window.location.href = "VerifyCertificate.html" + queryString;
 
-// id ,name,course1,university,DOI1,EID1
-       var tblRow = "<tr>" + "<td>" + ret.id + "</td>" +
-           "<td>" + ret.name + "</td>" + "<td>" + ret.coursename + "</td>" + "<td>" + ret.university + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tbody");
-     }
+// id ,name,course1,issuer1,DOI1,EID1
+       //var tblRow = "<tr>" + "<td>" + ret.date1 + "</td>" +
+        //   "<td>" + ret.id + "</td>" + "<td>" + ret.course1 + "</td>" + "<td>" + ret.issuer1 + "</td>" + "</tr>"
+         //  $(tblRow).appendTo("#userdata tbody");
+    }
 //add ,DOI1,EID1 above
+
 var EID3   = document.getElementById("txtEID").value;
 
 
     function Sign(EID3){
-    	var DAPP_ID =   window.location.pathname.split('/')[2];
-  //'27566d2d1464d1ca9964662027c4ac317bf3d6fcd1f23dc97ecabd1975b8dd09';
-    
+//    	var DAPP_ID =   window.location.pathname.split('/')[2];
+      	var DAPP_ID =   '27566d2d1464d1ca9964662027c4ac317bf3d6fcd1f23dc97ecabd1975b8dd09';
+
+
         console.log("DAPP_ID: "+DAPP_ID);
-        var BASE_URL = 'https:node1.belrium.io/api/dapps/' + DAPP_ID;
+        var BASE_URL = 'http:localhost:9305/api/dapps/' + DAPP_ID;
         var secret = 'offer cry duck relief work nerve concert penalty demand impulse bonus vague';
 
         // var EID   = document.getElementById("txtEID").value;
@@ -194,6 +198,7 @@ var EID3   = document.getElementById("txtEID").value;
 
  </div>
 </div>
+<!--
 <div class="visible">
   <div class="wrapper">
         <div class="profile">
@@ -213,7 +218,7 @@ var EID3   = document.getElementById("txtEID").value;
         </div>
       </div>
 </div>
-
+-->
   <script src="js/jspdf.js"></script>
   <script src="js/jquery-2.1.3.js"></script>
   <script src="js/pdfFromHTML.js"></script>
