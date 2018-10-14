@@ -1,0 +1,1837 @@
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model account.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'accounts',
+  tableFields: 
+   [ { name: 'address',
+       type: 'String',
+       length: 50,
+       primary_key: true,
+       not_null: true },
+     { name: 'str1', type: 'String', length: 256, index: true },
+     { name: 'str2', type: 'String', length: 256 },
+     { name: 'str3', type: 'String', length: 256 },
+     { name: 'str4', type: 'String', length: 256 },
+     { name: 'str5', type: 'String', length: 256 },
+     { name: 'num1', type: 'Number' },
+     { name: 'num2', type: 'Number' },
+     { name: 'num3', type: 'Number' },
+     { name: 'num4', type: 'Number' },
+     { name: 'num5', type: 'Number' },
+     { name: 'bigint1', type: 'BigInt' },
+     { name: 'bigint2', type: 'BigInt' },
+     { name: 'bigint3', type: 'BigInt' },
+     { name: 'bigint4', type: 'BigInt' },
+     { name: 'bigint5', type: 'BigInt' },
+     { name: 'text1', type: 'Text' },
+     { name: 'text2', type: 'Text' },
+     { name: 'text3', type: 'Text' },
+     { name: 'text4', type: 'Text' },
+     { name: 'text5', type: 'Text' } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model balance.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'balances',
+  tableFields: 
+   [ { name: 'address',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'currency',
+       type: 'String',
+       length: 30,
+       not_null: true,
+       index: true },
+     { name: 'balance', type: 'String', length: 50, not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model block.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'blocks',
+  tableFields: 
+   [ { name: 'id',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       unique: true,
+       primary_key: true },
+     { name: 'timestamp', type: 'BigInt', not_null: true },
+     { name: 'height', type: 'BigInt', not_null: true, index: true },
+     { name: 'payloadLength', type: 'BigInt', not_null: true },
+     { name: 'payloadHash',
+       type: 'String',
+       length: 64,
+       not_null: true },
+     { name: 'prevBlockId', type: 'String', length: 64 },
+     { name: 'pointId', type: 'String', length: 64 },
+     { name: 'pointHeight', type: 'BigInt' },
+     { name: 'delegate',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       index: true },
+     { name: 'signature', type: 'String', length: 128, not_null: true },
+     { name: 'count', type: 'BigInt', not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model deposit.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'deposits',
+  tableFields: 
+   [ { name: 'tid',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       unique: true,
+       primary_key: true },
+     { name: 'srcId',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       unique: true,
+       index: true },
+     { name: 'recipientId',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'currency',
+       type: 'String',
+       length: 30,
+       not_null: true,
+       index: true },
+     { name: 'amount', type: 'String', length: 50, not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model round-fee.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'round_fees',
+  tableFields: 
+   [ { name: 'round', type: 'Number', not_null: true, index: true },
+     { name: 'currency', type: 'String', length: 30, not_null: true },
+     { name: 'amount', type: 'String', length: 50, not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model transaction.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'transactions',
+  tableFields: 
+   [ { name: 'id',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       unique: true,
+       primary_key: true },
+     { name: 'timestamp', type: 'BigInt', not_null: true, index: true },
+     { name: 'senderId',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'senderPublicKey',
+       type: 'String',
+       length: 64,
+       not_null: true },
+     { name: 'fee', type: 'String', length: 50, not_null: true },
+     { name: 'signature', type: 'String', length: 128, not_null: true },
+     { name: 'type', type: 'Number', not_null: true, index: true },
+     { name: 'args', type: 'Text' },
+     { name: 'height', type: 'BigInt', not_null: true, index: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model transfer.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'transfers',
+  tableFields: 
+   [ { name: 'tid',
+       type: 'String',
+       length: 64,
+       not_null: true,
+       unique: true,
+       primary_key: true },
+     { name: 'senderId',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'recipientId',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'currency',
+       type: 'String',
+       length: 30,
+       not_null: true,
+       index: true },
+     { name: 'amount', type: 'String', length: 50, not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model variable.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { table: 'variables',
+  tableFields: 
+   [ { name: 'key',
+       type: 'String',
+       length: 256,
+       not_null: true,
+       primary_key: true },
+     { name: 'value', type: 'String', length: 256, not_null: true } ],
+  type: 'create' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model certificate.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { name: 'certificate',
+  fields: 
+   [ { name: 'name', type: 'String', length: 35 },
+     { name: 'id', type: 'String', length: 30, not_null: true },
+     { name: 'university',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'coursename',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'dateofissue',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'enrollmentId',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'address',
+       type: 'String',
+       length: 256,
+       not_null: true,
+       index: true } ],
+  type: 'create',
+  tableFields: 
+   [ { name: 'name', type: 'String', length: 35 },
+     { name: 'id', type: 'String', length: 30, not_null: true },
+     { name: 'university',
+       type: 'String',
+       length: 50,
+       not_null: true,
+       index: true },
+     { name: 'coursename',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'dateofissue',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'enrollmentId',
+       type: 'String',
+       length: 100,
+       not_null: true,
+       index: true },
+     { name: 'address',
+       type: 'String',
+       length: 256,
+       not_null: true,
+       index: true } ],
+  table: 'certificate' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:28 () loading model domain.js
+2018-10-14T21:40:56+0530 <debug> orm.js:1 (e.value) sync schema { name: 'domains',
+  fields: 
+   [ { name: 'address',
+       type: 'String',
+       length: 256,
+       not_null: true,
+       index: true },
+     { name: 'ip', type: 'String', length: 15 },
+     { name: 'owner', type: 'String', length: 50, not_null: true },
+     { name: 'suffix',
+       type: 'String',
+       length: 10,
+       not_null: true,
+       index: true } ],
+  type: 'create',
+  tableFields: 
+   [ { name: 'address',
+       type: 'String',
+       length: 256,
+       not_null: true,
+       index: true },
+     { name: 'ip', type: 'String', length: 15 },
+     { name: 'owner', type: 'String', length: 50, not_null: true },
+     { name: 'suffix',
+       type: 'String',
+       length: 10,
+       not_null: true,
+       index: true } ],
+  table: 'domains' }
+2018-10-14T21:40:56+0530 <info> shovel2.js:52 () loading contract core.js
+2018-10-14T21:40:56+0530 <info> shovel2.js:52 () loading contract index.js
+2018-10-14T21:40:56+0530 <info> shovel2.js:52 () loading contract certificate.js
+2018-10-14T21:40:56+0530 <info> shovel2.js:52 () loading contract domain.js
+2018-10-14T21:40:56+0530 <info> shovel2.js:71 () loading interface basic.js
+2018-10-14T21:40:56+0530 <info> shovel2.js:71 () loading interface accounts.js
+2018-10-14T21:40:57+0530 <info> shovel2.js:71 () loading interface certificate.js
+2018-10-14T21:40:57+0530 <info> shovel2.js:71 () loading interface domain.js
+2018-10-14T21:40:57+0530 <info> shovel2.js:71 () loading interface test.js
+2018-10-14T21:40:57+0530 <info> shovel2.js:71 () loading interface transactions.js
+2018-10-14T21:40:57+0530 <debug> orm.js:1 (e.<anonymous>) Model#findAll select "balances"."address", "balances"."currency", "balances"."balance" from "balances" where "balances"."_deleted_" = 0;
+2018-10-14T21:40:57+0530 <debug> orm.js:1 (e.<anonymous>) Model#findAll select "variables"."key", "variables"."value" from "variables" where "variables"."_deleted_" = 0;
+2018-10-14T21:40:57+0530 <debug> orm.js:1 (e.<anonymous>) Model#findAll select "round_fees"."round", "round_fees"."currency", "round_fees"."amount" from "round_fees" where "round_fees"."_deleted_" = 0;
+2018-10-14T21:40:57+0530 <info> round.js:1 (Function.Round.onBind) Forging enable on account: A66HMq6iCUKN9KsSvibqW3cWB9HKoTvThZ
+2018-10-14T21:40:57+0530 <info> round.js:1 (Function.Round.onBind) Forging enable on account: ACiXa6gUUX583UMXK5MtYADCdxUQTCF6yY
+2018-10-14T21:40:57+0530 <info> round.js:1 (Function.Round.onBind) Forging enable on account: ALRHRYjfp2AnggKCGWjJ7wk72NN7vdXY6m
+2018-10-14T21:40:57+0530 <info> round.js:1 (Function.Round.onBind) Forging enable on account: A8zvocPsTjecUh8G6oXXvJFPBMA2s2z48H
+2018-10-14T21:40:57+0530 <info> round.js:1 (Function.Round.onBind) Forging enable on account: A2iPkUBhsqBMPbh3X4zD4Hhsuo8dkAK8e4
+2018-10-14T21:40:57+0530 <info> index.js:1 (Sandbox.<anonymous>) Initialize complete
+2018-10-14T21:40:57+0530 <info> blocks.js:1 (Function.<anonymous>) app.meta { name: 'Test1',
+  description: 'testing first Dapp1',
+  tags: '',
+  link: 'https://github.com/charry1729/certi/archive/master.zip',
+  type: 0,
+  category: 1,
+  icon: 'http://o7dyh3w0x.bkt.clouddn.com/hello.png',
+  delegates: 
+   [ 'db18d5799944030f76b6ce0879b1ca4b0c2c1cee51f53ce9b43f78259950c2fd',
+     '590e28d2964b0aa4d7c7b98faee4676d467606c6761f7f41f99c52bb4813b5e4',
+     'bfe511158d674c3a1e21111223a49770bee93611d998e88a5d2ea3145de2b68b',
+     '7bbf62931cf3c596591a580212631aff51d6bc0577c54769953caadb23f6ab00',
+     '452df9213aedb3b9fed6db3e2ea9f49d3db226e2dac01828bc3dcd73b7a953b4' ],
+  unlockDelegates: 3,
+  transactionId: '94ce36d3fcbf33dcce388e7d09b7d38af177d88985c4e6330c8e4cbfead88859' }
+2018-10-14T21:40:57+0530 <info> blocks.js:1 (Function.<anonymous>) Blocks found: 1
+2018-10-14T21:40:57+0530 <debug> orm.js:1 (e.<anonymous>) Model#findOne select "blocks"."id", "blocks"."timestamp", "blocks"."height", "blocks"."payloadLength", "blocks"."payloadHash", "blocks"."prevBlockId", "blocks"."pointId", "blocks"."pointHeight", "blocks"."delegate", "blocks"."signature", "blocks"."count" from "blocks" where "blocks"."height" = 1 and "blocks"."_deleted_" = 0; [ [ 'cee2f87f98d0344646ae726af4df3bb1bddcceecc64053f36d16d1281aa90215',
+    '0',
+    '1',
+    '0',
+    'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+    '',
+    '',
+    '',
+    'a7cfd49d25ce247568d39b17fca221d9b2ff8402a9f6eb6346d2291a5c81374c',
+    '287818ef81b51375cc1cc36b62e3f3b8027d8334633828fee0801d9033a0da60a9ca182ac4435c663aabae141563c06c6cd55d494bce1d2dae92e9da8ace0205',
+    '0' ] ]
+2018-10-14T21:40:57+0530 <trace> blocks.js:1 (Blocks.setLastBlock) Blocks#setLastBlock { id: 'cee2f87f98d0344646ae726af4df3bb1bddcceecc64053f36d16d1281aa90215',
+  timestamp: 0,
+  height: 1,
+  payloadLength: 0,
+  payloadHash: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+  prevBlockId: '',
+  pointId: '',
+  pointHeight: 0,
+  delegate: 'a7cfd49d25ce247568d39b17fca221d9b2ff8402a9f6eb6346d2291a5c81374c',
+  signature: '287818ef81b51375cc1cc36b62e3f3b8027d8334633828fee0801d9033a0da60a9ca182ac4435c663aabae141563c06c6cd55d494bce1d2dae92e9da8ace0205',
+  count: 0 }
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /contracts
+2018-10-14T21:40:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 1 func 
+2018-10-14T21:40:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 2 func 
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /transfers
+2018-10-14T21:40:57+0530 <info> api.js:1 (Immediate.<anonymous>) app set ready success
+2018-10-14T21:40:57+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35399 }
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface post /accounts/open
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface post /accounts/balance
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /certificate/:id
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /certificate/:enrollmentId
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /domain/:address
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /domain/suffix/:suffix
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /test
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface put /ping/:seq
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface post /sleep
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface put /withdrawal
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface put /transactions/inTransfer
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface put /transaction/withdrawal
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface put /transaction/inTransfer
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /transaction/unconfirmed
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /transaction/confirmed
+2018-10-14T21:40:57+0530 <info> api.js:1 () register app interface get /transaction/transfers
+2018-10-14T21:40:57+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:40:57+0530 <debug> sequence.js:1 (i) Main sequence out 1 func 
+2018-10-14T21:40:57+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:40:58+0530 <debug> sequence.js:1 (i) Main sequence out 2 func 
+2018-10-14T21:40:58+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:41:07+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 3 func 
+2018-10-14T21:41:07+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35399 }
+2018-10-14T21:41:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 4 func 
+2018-10-14T21:41:10+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:41:10+0530 <debug> sequence.js:1 (i) Main sequence out 3 func 
+2018-10-14T21:41:10+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:41:10+0530 <debug> sequence.js:1 (i) Main sequence out 4 func 
+2018-10-14T21:41:10+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:41:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 5 func 
+2018-10-14T21:41:20+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35401 }
+2018-10-14T21:41:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 6 func 
+2018-10-14T21:41:21+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:41:21+0530 <debug> sequence.js:1 (i) Main sequence out 5 func 
+2018-10-14T21:41:21+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:41:22+0530 <debug> sequence.js:1 (i) Main sequence out 6 func 
+2018-10-14T21:41:22+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:41:31+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 7 func 
+2018-10-14T21:41:31+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35401 }
+2018-10-14T21:41:31+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:41:31+0530 <debug> sequence.js:1 (i) Main sequence out 7 func 
+2018-10-14T21:41:31+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:41:32+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 8 func 
+2018-10-14T21:41:32+0530 <debug> sequence.js:1 (i) Main sequence out 8 func 
+2018-10-14T21:41:32+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:41:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 9 func 
+2018-10-14T21:41:41+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35403 }
+2018-10-14T21:41:41+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:41:41+0530 <debug> sequence.js:1 (i) Main sequence out 9 func 
+2018-10-14T21:41:41+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:41:42+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 10 func 
+2018-10-14T21:41:43+0530 <debug> sequence.js:1 (i) Main sequence out 10 func 
+2018-10-14T21:41:43+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:41:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 11 func 
+2018-10-14T21:41:51+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35403 }
+2018-10-14T21:41:52+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:41:52+0530 <debug> sequence.js:1 (i) Main sequence out 11 func 
+2018-10-14T21:41:52+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:41:53+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 12 func 
+2018-10-14T21:41:53+0530 <debug> sequence.js:1 (i) Main sequence out 12 func 
+2018-10-14T21:41:53+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 13 func 
+2018-10-14T21:42:02+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35403 }
+2018-10-14T21:42:02+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:02+0530 <debug> sequence.js:1 (i) Main sequence out 13 func 
+2018-10-14T21:42:02+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:03+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 14 func 
+2018-10-14T21:42:03+0530 <debug> sequence.js:1 (i) Main sequence out 14 func 
+2018-10-14T21:42:03+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:12+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 15 func 
+2018-10-14T21:42:12+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35405 }
+2018-10-14T21:42:12+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:12+0530 <debug> sequence.js:1 (i) Main sequence out 15 func 
+2018-10-14T21:42:12+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 16 func 
+2018-10-14T21:42:13+0530 <debug> sequence.js:1 (i) Main sequence out 16 func 
+2018-10-14T21:42:13+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:22+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 17 func 
+2018-10-14T21:42:22+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35405 }
+2018-10-14T21:42:22+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:22+0530 <debug> sequence.js:1 (i) Main sequence out 17 func 
+2018-10-14T21:42:22+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 18 func 
+2018-10-14T21:42:23+0530 <debug> sequence.js:1 (i) Main sequence out 18 func 
+2018-10-14T21:42:23+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:32+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 19 func 
+2018-10-14T21:42:32+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35405 }
+2018-10-14T21:42:33+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:33+0530 <debug> sequence.js:1 (i) Main sequence out 19 func 
+2018-10-14T21:42:33+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 20 func 
+2018-10-14T21:42:34+0530 <debug> sequence.js:1 (i) Main sequence out 20 func 
+2018-10-14T21:42:34+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:43+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 21 func 
+2018-10-14T21:42:43+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35407 }
+2018-10-14T21:42:43+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:43+0530 <debug> sequence.js:1 (i) Main sequence out 21 func 
+2018-10-14T21:42:43+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:44+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 22 func 
+2018-10-14T21:42:44+0530 <debug> sequence.js:1 (i) Main sequence out 22 func 
+2018-10-14T21:42:44+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:42:53+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 23 func 
+2018-10-14T21:42:53+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35407 }
+2018-10-14T21:42:53+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:42:53+0530 <debug> sequence.js:1 (i) Main sequence out 23 func 
+2018-10-14T21:42:53+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:42:54+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 24 func 
+2018-10-14T21:42:55+0530 <debug> sequence.js:1 (i) Main sequence out 24 func 
+2018-10-14T21:42:55+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:03+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 25 func 
+2018-10-14T21:43:03+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35407 }
+2018-10-14T21:43:03+0530 <debug> sequence.js:1 (i) Main sequence out 25 func 
+2018-10-14T21:43:03+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:05+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 26 func 
+2018-10-14T21:43:05+0530 <debug> sequence.js:1 (i) Main sequence out 26 func 
+2018-10-14T21:43:05+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 27 func 
+2018-10-14T21:43:13+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35409 }
+2018-10-14T21:43:14+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:43:14+0530 <debug> sequence.js:1 (i) Main sequence out 27 func 
+2018-10-14T21:43:14+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:15+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 28 func 
+2018-10-14T21:43:16+0530 <debug> sequence.js:1 (i) Main sequence out 28 func 
+2018-10-14T21:43:16+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:24+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 29 func 
+2018-10-14T21:43:24+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35409 }
+2018-10-14T21:43:24+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:43:24+0530 <debug> sequence.js:1 (i) Main sequence out 29 func 
+2018-10-14T21:43:24+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:26+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 30 func 
+2018-10-14T21:43:27+0530 <debug> sequence.js:1 (i) Main sequence out 30 func 
+2018-10-14T21:43:27+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:34+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 31 func 
+2018-10-14T21:43:34+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35409 }
+2018-10-14T21:43:36+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:43:36+0530 <debug> sequence.js:1 (i) Main sequence out 31 func 
+2018-10-14T21:43:36+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:37+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 32 func 
+2018-10-14T21:43:37+0530 <debug> sequence.js:1 (i) Main sequence out 32 func 
+2018-10-14T21:43:37+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:46+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 33 func 
+2018-10-14T21:43:46+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35411 }
+2018-10-14T21:43:46+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:43:46+0530 <debug> sequence.js:1 (i) Main sequence out 33 func 
+2018-10-14T21:43:46+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:47+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 34 func 
+2018-10-14T21:43:47+0530 <debug> sequence.js:1 (i) Main sequence out 34 func 
+2018-10-14T21:43:47+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:43:56+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 35 func 
+2018-10-14T21:43:56+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35411 }
+2018-10-14T21:43:56+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:43:56+0530 <debug> sequence.js:1 (i) Main sequence out 35 func 
+2018-10-14T21:43:56+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:43:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 36 func 
+2018-10-14T21:43:58+0530 <debug> sequence.js:1 (i) Main sequence out 36 func 
+2018-10-14T21:43:58+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:44:06+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 37 func 
+2018-10-14T21:44:06+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35411 }
+2018-10-14T21:44:07+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:44:07+0530 <debug> sequence.js:1 (i) Main sequence out 37 func 
+2018-10-14T21:44:07+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:44:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 38 func 
+2018-10-14T21:44:08+0530 <debug> sequence.js:1 (i) Main sequence out 38 func 
+2018-10-14T21:44:08+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:44:17+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 39 func 
+2018-10-14T21:44:17+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35413 }
+2018-10-14T21:44:18+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 40 func 
+2018-10-14T21:44:18+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:44:18+0530 <debug> sequence.js:1 (i) Main sequence out 39 func 
+2018-10-14T21:44:18+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:44:18+0530 <debug> sequence.js:1 (i) Main sequence out 40 func 
+2018-10-14T21:44:18+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:44:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 41 func 
+2018-10-14T21:44:28+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35413 }
+2018-10-14T21:44:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 42 func 
+2018-10-14T21:44:29+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:44:29+0530 <debug> sequence.js:1 (i) Main sequence out 41 func 
+2018-10-14T21:44:29+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:44:29+0530 <debug> sequence.js:1 (i) Main sequence out 42 func 
+2018-10-14T21:44:29+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:44:39+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 43 func 
+2018-10-14T21:44:39+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35415 }
+2018-10-14T21:44:39+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 44 func 
+2018-10-14T21:44:39+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:44:39+0530 <debug> sequence.js:1 (i) Main sequence out 43 func 
+2018-10-14T21:44:39+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:44:39+0530 <debug> sequence.js:1 (i) Main sequence out 44 func 
+2018-10-14T21:44:39+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:44:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 45 func 
+2018-10-14T21:44:49+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35415 }
+2018-10-14T21:44:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 46 func 
+2018-10-14T21:44:50+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:44:50+0530 <debug> sequence.js:1 (i) Main sequence out 45 func 
+2018-10-14T21:44:50+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:44:50+0530 <debug> sequence.js:1 (i) Main sequence out 46 func 
+2018-10-14T21:44:50+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 47 func 
+2018-10-14T21:45:00+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35415 }
+2018-10-14T21:45:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 48 func 
+2018-10-14T21:45:00+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:00+0530 <debug> sequence.js:1 (i) Main sequence out 47 func 
+2018-10-14T21:45:00+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:00+0530 <debug> sequence.js:1 (i) Main sequence out 48 func 
+2018-10-14T21:45:00+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 49 func 
+2018-10-14T21:45:10+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35415 }
+2018-10-14T21:45:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 50 func 
+2018-10-14T21:45:10+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:11+0530 <debug> sequence.js:1 (i) Main sequence out 49 func 
+2018-10-14T21:45:11+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:11+0530 <debug> sequence.js:1 (i) Main sequence out 50 func 
+2018-10-14T21:45:11+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:21+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 51 func 
+2018-10-14T21:45:21+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35417 }
+2018-10-14T21:45:21+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 52 func 
+2018-10-14T21:45:21+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:21+0530 <debug> sequence.js:1 (i) Main sequence out 51 func 
+2018-10-14T21:45:21+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:21+0530 <debug> sequence.js:1 (i) Main sequence out 52 func 
+2018-10-14T21:45:21+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:31+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 53 func 
+2018-10-14T21:45:31+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35417 }
+2018-10-14T21:45:31+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:31+0530 <debug> sequence.js:1 (i) Main sequence out 53 func 
+2018-10-14T21:45:31+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:31+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 54 func 
+2018-10-14T21:45:31+0530 <debug> sequence.js:1 (i) Main sequence out 54 func 
+2018-10-14T21:45:31+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 55 func 
+2018-10-14T21:45:41+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35419 }
+2018-10-14T21:45:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 56 func 
+2018-10-14T21:45:41+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:41+0530 <debug> sequence.js:1 (i) Main sequence out 55 func 
+2018-10-14T21:45:41+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:42+0530 <debug> sequence.js:1 (i) Main sequence out 56 func 
+2018-10-14T21:45:42+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:45:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 57 func 
+2018-10-14T21:45:51+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35419 }
+2018-10-14T21:45:52+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 58 func 
+2018-10-14T21:45:52+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:45:52+0530 <debug> sequence.js:1 (i) Main sequence out 57 func 
+2018-10-14T21:45:52+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:45:52+0530 <debug> sequence.js:1 (i) Main sequence out 58 func 
+2018-10-14T21:45:52+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 59 func 
+2018-10-14T21:46:02+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35419 }
+2018-10-14T21:46:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 60 func 
+2018-10-14T21:46:02+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:02+0530 <debug> sequence.js:1 (i) Main sequence out 59 func 
+2018-10-14T21:46:02+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:46:02+0530 <debug> sequence.js:1 (i) Main sequence out 60 func 
+2018-10-14T21:46:02+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:12+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 61 func 
+2018-10-14T21:46:12+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35421 }
+2018-10-14T21:46:12+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 62 func 
+2018-10-14T21:46:13+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:13+0530 <debug> sequence.js:1 (i) Main sequence out 61 func 
+2018-10-14T21:46:13+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:46:14+0530 <debug> sequence.js:1 (i) Main sequence out 62 func 
+2018-10-14T21:46:14+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 63 func 
+2018-10-14T21:46:23+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35421 }
+2018-10-14T21:46:23+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:23+0530 <debug> sequence.js:1 (i) Main sequence out 63 func 
+2018-10-14T21:46:23+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:46:24+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 64 func 
+2018-10-14T21:46:25+0530 <debug> sequence.js:1 (i) Main sequence out 64 func 
+2018-10-14T21:46:25+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 65 func 
+2018-10-14T21:46:33+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35421 }
+2018-10-14T21:46:35+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 66 func 
+2018-10-14T21:46:35+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:35+0530 <debug> sequence.js:1 (i) Main sequence out 65 func 
+2018-10-14T21:46:35+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:46:35+0530 <debug> sequence.js:1 (i) Main sequence out 66 func 
+2018-10-14T21:46:35+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:45+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 67 func 
+2018-10-14T21:46:45+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35423 }
+2018-10-14T21:46:45+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 68 func 
+2018-10-14T21:46:48+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:48+0530 <debug> sequence.js:1 (i) Main sequence out 67 func 
+2018-10-14T21:46:48+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:46:48+0530 <debug> sequence.js:1 (i) Main sequence out 68 func 
+2018-10-14T21:46:48+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:46:58+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 69 func 
+2018-10-14T21:46:58+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35423 }
+2018-10-14T21:46:58+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 70 func 
+2018-10-14T21:46:59+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:46:59+0530 <debug> sequence.js:1 (i) Main sequence out 69 func 
+2018-10-14T21:46:59+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:00+0530 <debug> sequence.js:1 (i) Main sequence out 70 func 
+2018-10-14T21:47:00+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:47:09+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 71 func 
+2018-10-14T21:47:09+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35423 }
+2018-10-14T21:47:09+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:47:09+0530 <debug> sequence.js:1 (i) Main sequence out 71 func 
+2018-10-14T21:47:09+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 72 func 
+2018-10-14T21:47:10+0530 <debug> sequence.js:1 (i) Main sequence out 72 func 
+2018-10-14T21:47:10+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:47:19+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 73 func 
+2018-10-14T21:47:19+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35425 }
+2018-10-14T21:47:19+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:47:19+0530 <debug> sequence.js:1 (i) Main sequence out 73 func 
+2018-10-14T21:47:19+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 74 func 
+2018-10-14T21:47:22+0530 <debug> sequence.js:1 (i) Main sequence out 74 func 
+2018-10-14T21:47:22+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:47:29+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 75 func 
+2018-10-14T21:47:29+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35425 }
+2018-10-14T21:47:32+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 76 func 
+2018-10-14T21:47:33+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:47:33+0530 <debug> sequence.js:1 (i) Main sequence out 75 func 
+2018-10-14T21:47:33+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:34+0530 <debug> sequence.js:1 (i) Main sequence out 76 func 
+2018-10-14T21:47:34+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:47:43+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 77 func 
+2018-10-14T21:47:43+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35427 }
+2018-10-14T21:47:43+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:47:43+0530 <debug> sequence.js:1 (i) Main sequence out 77 func 
+2018-10-14T21:47:43+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:44+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 78 func 
+2018-10-14T21:47:44+0530 <debug> sequence.js:1 (i) Main sequence out 78 func 
+2018-10-14T21:47:44+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:47:53+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 79 func 
+2018-10-14T21:47:53+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35427 }
+2018-10-14T21:47:54+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:47:54+0530 <debug> sequence.js:1 (i) Main sequence out 79 func 
+2018-10-14T21:47:54+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:47:54+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 80 func 
+2018-10-14T21:47:54+0530 <debug> sequence.js:1 (i) Main sequence out 80 func 
+2018-10-14T21:47:54+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:04+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 81 func 
+2018-10-14T21:48:04+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35427 }
+2018-10-14T21:48:04+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 82 func 
+2018-10-14T21:48:06+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:06+0530 <debug> sequence.js:1 (i) Main sequence out 81 func 
+2018-10-14T21:48:06+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:06+0530 <debug> sequence.js:1 (i) Main sequence out 82 func 
+2018-10-14T21:48:06+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 83 func 
+2018-10-14T21:48:16+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35429 }
+2018-10-14T21:48:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 84 func 
+2018-10-14T21:48:16+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:16+0530 <debug> sequence.js:1 (i) Main sequence out 83 func 
+2018-10-14T21:48:16+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:17+0530 <debug> sequence.js:1 (i) Main sequence out 84 func 
+2018-10-14T21:48:17+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:26+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 85 func 
+2018-10-14T21:48:26+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35429 }
+2018-10-14T21:48:27+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 86 func 
+2018-10-14T21:48:27+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:27+0530 <debug> sequence.js:1 (i) Main sequence out 85 func 
+2018-10-14T21:48:27+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:27+0530 <debug> sequence.js:1 (i) Main sequence out 86 func 
+2018-10-14T21:48:27+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:37+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 87 func 
+2018-10-14T21:48:37+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35429 }
+2018-10-14T21:48:37+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:37+0530 <debug> sequence.js:1 (i) Main sequence out 87 func 
+2018-10-14T21:48:37+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:37+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 88 func 
+2018-10-14T21:48:37+0530 <debug> sequence.js:1 (i) Main sequence out 88 func 
+2018-10-14T21:48:37+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:47+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 89 func 
+2018-10-14T21:48:47+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35431 }
+2018-10-14T21:48:47+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 90 func 
+2018-10-14T21:48:48+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:48+0530 <debug> sequence.js:1 (i) Main sequence out 89 func 
+2018-10-14T21:48:48+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:48+0530 <debug> sequence.js:1 (i) Main sequence out 90 func 
+2018-10-14T21:48:48+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:48:58+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 91 func 
+2018-10-14T21:48:58+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35431 }
+2018-10-14T21:48:58+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 92 func 
+2018-10-14T21:48:58+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:48:58+0530 <debug> sequence.js:1 (i) Main sequence out 91 func 
+2018-10-14T21:48:58+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:48:58+0530 <debug> sequence.js:1 (i) Main sequence out 92 func 
+2018-10-14T21:48:58+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:49:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 93 func 
+2018-10-14T21:49:08+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35431 }
+2018-10-14T21:49:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 94 func 
+2018-10-14T21:49:08+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:49:08+0530 <debug> sequence.js:1 (i) Main sequence out 93 func 
+2018-10-14T21:49:08+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:49:09+0530 <debug> sequence.js:1 (i) Main sequence out 94 func 
+2018-10-14T21:49:09+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:49:18+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 95 func 
+2018-10-14T21:49:18+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35433 }
+2018-10-14T21:49:19+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:49:19+0530 <debug> sequence.js:1 (i) Main sequence out 95 func 
+2018-10-14T21:49:19+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:49:19+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 96 func 
+2018-10-14T21:49:19+0530 <debug> sequence.js:1 (i) Main sequence out 96 func 
+2018-10-14T21:49:19+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:49:29+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 97 func 
+2018-10-14T21:49:29+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35433 }
+2018-10-14T21:49:29+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 98 func 
+2018-10-14T21:49:30+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:49:30+0530 <debug> sequence.js:1 (i) Main sequence out 97 func 
+2018-10-14T21:49:30+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:49:30+0530 <debug> sequence.js:1 (i) Main sequence out 98 func 
+2018-10-14T21:49:30+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:49:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 99 func 
+2018-10-14T21:49:40+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35435 }
+2018-10-14T21:49:40+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 100 func 
+2018-10-14T21:49:41+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:49:41+0530 <debug> sequence.js:1 (i) Main sequence out 99 func 
+2018-10-14T21:49:41+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:49:41+0530 <debug> sequence.js:1 (i) Main sequence out 100 func 
+2018-10-14T21:49:41+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:49:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 101 func 
+2018-10-14T21:49:51+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35435 }
+2018-10-14T21:49:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 102 func 
+2018-10-14T21:49:51+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:49:51+0530 <debug> sequence.js:1 (i) Main sequence out 101 func 
+2018-10-14T21:49:51+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:49:52+0530 <debug> sequence.js:1 (i) Main sequence out 102 func 
+2018-10-14T21:49:52+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:01+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 103 func 
+2018-10-14T21:50:01+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35435 }
+2018-10-14T21:50:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 104 func 
+2018-10-14T21:50:02+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:02+0530 <debug> sequence.js:1 (i) Main sequence out 103 func 
+2018-10-14T21:50:02+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:03+0530 <debug> sequence.js:1 (i) Main sequence out 104 func 
+2018-10-14T21:50:03+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:12+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 105 func 
+2018-10-14T21:50:12+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35437 }
+2018-10-14T21:50:13+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:13+0530 <debug> sequence.js:1 (i) Main sequence out 105 func 
+2018-10-14T21:50:13+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 106 func 
+2018-10-14T21:50:13+0530 <debug> sequence.js:1 (i) Main sequence out 106 func 
+2018-10-14T21:50:13+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 107 func 
+2018-10-14T21:50:23+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35437 }
+2018-10-14T21:50:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 108 func 
+2018-10-14T21:50:23+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:23+0530 <debug> sequence.js:1 (i) Main sequence out 107 func 
+2018-10-14T21:50:23+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:23+0530 <debug> sequence.js:1 (i) Main sequence out 108 func 
+2018-10-14T21:50:23+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 109 func 
+2018-10-14T21:50:33+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35437 }
+2018-10-14T21:50:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 110 func 
+2018-10-14T21:50:34+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:34+0530 <debug> sequence.js:1 (i) Main sequence out 109 func 
+2018-10-14T21:50:34+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:35+0530 <debug> sequence.js:1 (i) Main sequence out 110 func 
+2018-10-14T21:50:35+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:44+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 111 func 
+2018-10-14T21:50:44+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35437 }
+2018-10-14T21:50:45+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 112 func 
+2018-10-14T21:50:47+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:47+0530 <debug> sequence.js:1 (i) Main sequence out 111 func 
+2018-10-14T21:50:47+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:47+0530 <debug> sequence.js:1 (i) Main sequence out 112 func 
+2018-10-14T21:50:47+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:50:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 113 func 
+2018-10-14T21:50:57+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35439 }
+2018-10-14T21:50:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 114 func 
+2018-10-14T21:50:57+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:50:57+0530 <debug> sequence.js:1 (i) Main sequence out 113 func 
+2018-10-14T21:50:57+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:50:58+0530 <debug> sequence.js:1 (i) Main sequence out 114 func 
+2018-10-14T21:50:58+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:07+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 115 func 
+2018-10-14T21:51:07+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35439 }
+2018-10-14T21:51:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 116 func 
+2018-10-14T21:51:08+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:51:08+0530 <debug> sequence.js:1 (i) Main sequence out 115 func 
+2018-10-14T21:51:08+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:51:08+0530 <debug> sequence.js:1 (i) Main sequence out 116 func 
+2018-10-14T21:51:08+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:18+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 117 func 
+2018-10-14T21:51:18+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35441 }
+2018-10-14T21:51:18+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 118 func 
+2018-10-14T21:51:18+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:51:18+0530 <debug> sequence.js:1 (i) Main sequence out 117 func 
+2018-10-14T21:51:18+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:51:18+0530 <debug> sequence.js:1 (i) Main sequence out 118 func 
+2018-10-14T21:51:18+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 119 func 
+2018-10-14T21:51:28+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35441 }
+2018-10-14T21:51:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 120 func 
+2018-10-14T21:51:29+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:51:29+0530 <debug> sequence.js:1 (i) Main sequence out 119 func 
+2018-10-14T21:51:29+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:51:29+0530 <debug> sequence.js:1 (i) Main sequence out 120 func 
+2018-10-14T21:51:29+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:39+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 121 func 
+2018-10-14T21:51:39+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35441 }
+2018-10-14T21:51:39+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 122 func 
+2018-10-14T21:51:39+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:51:39+0530 <debug> sequence.js:1 (i) Main sequence out 121 func 
+2018-10-14T21:51:39+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:51:40+0530 <debug> sequence.js:1 (i) Main sequence out 122 func 
+2018-10-14T21:51:40+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 123 func 
+2018-10-14T21:51:49+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35443 }
+2018-10-14T21:51:49+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:51:49+0530 <debug> sequence.js:1 (i) Main sequence out 123 func 
+2018-10-14T21:51:49+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:51:50+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 124 func 
+2018-10-14T21:51:50+0530 <debug> sequence.js:1 (i) Main sequence out 124 func 
+2018-10-14T21:51:50+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:51:59+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 125 func 
+2018-10-14T21:51:59+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35443 }
+2018-10-14T21:52:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 126 func 
+2018-10-14T21:52:00+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:52:00+0530 <debug> sequence.js:1 (i) Main sequence out 125 func 
+2018-10-14T21:52:00+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:00+0530 <debug> sequence.js:1 (i) Main sequence out 126 func 
+2018-10-14T21:52:00+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:52:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 127 func 
+2018-10-14T21:52:10+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35443 }
+2018-10-14T21:52:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 128 func 
+2018-10-14T21:52:10+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:52:10+0530 <debug> sequence.js:1 (i) Main sequence out 127 func 
+2018-10-14T21:52:10+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:10+0530 <debug> sequence.js:1 (i) Main sequence out 128 func 
+2018-10-14T21:52:10+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:52:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 129 func 
+2018-10-14T21:52:20+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35445 }
+2018-10-14T21:52:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 130 func 
+2018-10-14T21:52:21+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:52:21+0530 <debug> sequence.js:1 (i) Main sequence out 129 func 
+2018-10-14T21:52:21+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:21+0530 <debug> sequence.js:1 (i) Main sequence out 130 func 
+2018-10-14T21:52:21+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:52:31+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 131 func 
+2018-10-14T21:52:31+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35445 }
+2018-10-14T21:52:31+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 132 func 
+2018-10-14T21:52:32+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:52:32+0530 <debug> sequence.js:1 (i) Main sequence out 131 func 
+2018-10-14T21:52:32+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:32+0530 <debug> sequence.js:1 (i) Main sequence out 132 func 
+2018-10-14T21:52:32+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:52:42+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 133 func 
+2018-10-14T21:52:42+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35445 }
+2018-10-14T21:52:42+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 134 func 
+2018-10-14T21:52:42+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:52:42+0530 <debug> sequence.js:1 (i) Main sequence out 133 func 
+2018-10-14T21:52:42+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:42+0530 <debug> sequence.js:1 (i) Main sequence out 134 func 
+2018-10-14T21:52:42+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:52:52+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 135 func 
+2018-10-14T21:52:52+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35447 }
+2018-10-14T21:52:52+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 136 func 
+2018-10-14T21:52:52+0530 <debug> sequence.js:1 (i) Main sequence out 135 func 
+2018-10-14T21:52:52+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:52:53+0530 <debug> sequence.js:1 (i) Main sequence out 136 func 
+2018-10-14T21:52:53+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 137 func 
+2018-10-14T21:53:02+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35447 }
+2018-10-14T21:53:03+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:53:03+0530 <debug> sequence.js:1 (i) Main sequence out 137 func 
+2018-10-14T21:53:03+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:03+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 138 func 
+2018-10-14T21:53:03+0530 <debug> sequence.js:1 (i) Main sequence out 138 func 
+2018-10-14T21:53:03+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 139 func 
+2018-10-14T21:53:13+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35447 }
+2018-10-14T21:53:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 140 func 
+2018-10-14T21:53:13+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:53:13+0530 <debug> sequence.js:1 (i) Main sequence out 139 func 
+2018-10-14T21:53:13+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:13+0530 <debug> sequence.js:1 (i) Main sequence out 140 func 
+2018-10-14T21:53:13+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 141 func 
+2018-10-14T21:53:23+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35449 }
+2018-10-14T21:53:23+0530 <debug> sequence.js:1 (i) Main sequence out 141 func 
+2018-10-14T21:53:23+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 142 func 
+2018-10-14T21:53:25+0530 <debug> sequence.js:1 (i) Main sequence out 142 func 
+2018-10-14T21:53:25+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 143 func 
+2018-10-14T21:53:33+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35449 }
+2018-10-14T21:53:34+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:53:34+0530 <debug> sequence.js:1 (i) Main sequence out 143 func 
+2018-10-14T21:53:34+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:35+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 144 func 
+2018-10-14T21:53:35+0530 <debug> sequence.js:1 (i) Main sequence out 144 func 
+2018-10-14T21:53:35+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:44+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 145 func 
+2018-10-14T21:53:44+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35451 }
+2018-10-14T21:53:44+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:53:44+0530 <debug> sequence.js:1 (i) Main sequence out 145 func 
+2018-10-14T21:53:44+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:45+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 146 func 
+2018-10-14T21:53:45+0530 <debug> sequence.js:1 (i) Main sequence out 146 func 
+2018-10-14T21:53:45+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:53:54+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 147 func 
+2018-10-14T21:53:54+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35451 }
+2018-10-14T21:53:55+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 148 func 
+2018-10-14T21:53:56+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:53:56+0530 <debug> sequence.js:1 (i) Main sequence out 147 func 
+2018-10-14T21:53:56+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:53:56+0530 <debug> sequence.js:1 (i) Main sequence out 148 func 
+2018-10-14T21:53:56+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:06+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 149 func 
+2018-10-14T21:54:06+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35451 }
+2018-10-14T21:54:06+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 150 func 
+2018-10-14T21:54:06+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:54:06+0530 <debug> sequence.js:1 (i) Main sequence out 149 func 
+2018-10-14T21:54:06+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:54:06+0530 <debug> sequence.js:1 (i) Main sequence out 150 func 
+2018-10-14T21:54:06+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 151 func 
+2018-10-14T21:54:16+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35453 }
+2018-10-14T21:54:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 152 func 
+2018-10-14T21:54:17+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:54:17+0530 <debug> sequence.js:1 (i) Main sequence out 151 func 
+2018-10-14T21:54:17+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:54:17+0530 <debug> sequence.js:1 (i) Main sequence out 152 func 
+2018-10-14T21:54:17+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:27+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 153 func 
+2018-10-14T21:54:27+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35453 }
+2018-10-14T21:54:27+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 154 func 
+2018-10-14T21:54:28+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:54:28+0530 <debug> sequence.js:1 (i) Main sequence out 153 func 
+2018-10-14T21:54:28+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:54:29+0530 <debug> sequence.js:1 (i) Main sequence out 154 func 
+2018-10-14T21:54:29+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:38+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 155 func 
+2018-10-14T21:54:38+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35455 }
+2018-10-14T21:54:39+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:54:39+0530 <debug> sequence.js:1 (i) Main sequence out 155 func 
+2018-10-14T21:54:39+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:54:39+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 156 func 
+2018-10-14T21:54:39+0530 <debug> sequence.js:1 (i) Main sequence out 156 func 
+2018-10-14T21:54:39+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 157 func 
+2018-10-14T21:54:49+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35455 }
+2018-10-14T21:54:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 158 func 
+2018-10-14T21:54:49+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:54:49+0530 <debug> sequence.js:1 (i) Main sequence out 157 func 
+2018-10-14T21:54:49+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:54:50+0530 <debug> sequence.js:1 (i) Main sequence out 158 func 
+2018-10-14T21:54:50+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:54:59+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 159 func 
+2018-10-14T21:54:59+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35455 }
+2018-10-14T21:55:00+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:00+0530 <debug> sequence.js:1 (i) Main sequence out 159 func 
+2018-10-14T21:55:00+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:00+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 160 func 
+2018-10-14T21:55:01+0530 <debug> sequence.js:1 (i) Main sequence out 160 func 
+2018-10-14T21:55:01+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:55:10+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 161 func 
+2018-10-14T21:55:10+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35457 }
+2018-10-14T21:55:10+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:10+0530 <debug> sequence.js:1 (i) Main sequence out 161 func 
+2018-10-14T21:55:10+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:11+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 162 func 
+2018-10-14T21:55:11+0530 <debug> sequence.js:1 (i) Main sequence out 162 func 
+2018-10-14T21:55:11+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:55:20+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 163 func 
+2018-10-14T21:55:20+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35457 }
+2018-10-14T21:55:20+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:20+0530 <debug> sequence.js:1 (i) Main sequence out 163 func 
+2018-10-14T21:55:20+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:21+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 164 func 
+2018-10-14T21:55:22+0530 <debug> sequence.js:1 (i) Main sequence out 164 func 
+2018-10-14T21:55:22+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:55:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 165 func 
+2018-10-14T21:55:31+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35457 }
+2018-10-14T21:55:31+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:31+0530 <debug> sequence.js:1 (i) Main sequence out 165 func 
+2018-10-14T21:55:31+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:32+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 166 func 
+2018-10-14T21:55:32+0530 <debug> sequence.js:1 (i) Main sequence out 166 func 
+2018-10-14T21:55:32+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:55:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 167 func 
+2018-10-14T21:55:41+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35459 }
+2018-10-14T21:55:42+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:42+0530 <debug> sequence.js:1 (i) Main sequence out 167 func 
+2018-10-14T21:55:42+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:42+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 168 func 
+2018-10-14T21:55:43+0530 <debug> sequence.js:1 (i) Main sequence out 168 func 
+2018-10-14T21:55:43+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:55:52+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 169 func 
+2018-10-14T21:55:52+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35459 }
+2018-10-14T21:55:52+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:55:52+0530 <debug> sequence.js:1 (i) Main sequence out 169 func 
+2018-10-14T21:55:52+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:55:53+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 170 func 
+2018-10-14T21:55:53+0530 <debug> sequence.js:1 (i) Main sequence out 170 func 
+2018-10-14T21:55:53+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 171 func 
+2018-10-14T21:56:02+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35459 }
+2018-10-14T21:56:03+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:56:03+0530 <debug> sequence.js:1 (i) Main sequence out 171 func 
+2018-10-14T21:56:03+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:03+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 172 func 
+2018-10-14T21:56:04+0530 <debug> sequence.js:1 (i) Main sequence out 172 func 
+2018-10-14T21:56:04+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 173 func 
+2018-10-14T21:56:13+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35461 }
+2018-10-14T21:56:13+0530 <debug> sequence.js:1 (i) Main sequence out 173 func 
+2018-10-14T21:56:13+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:14+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 174 func 
+2018-10-14T21:56:15+0530 <debug> sequence.js:1 (i) Main sequence out 174 func 
+2018-10-14T21:56:15+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:23+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 175 func 
+2018-10-14T21:56:23+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35461 }
+2018-10-14T21:56:23+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:56:23+0530 <debug> sequence.js:1 (i) Main sequence out 175 func 
+2018-10-14T21:56:23+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:25+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 176 func 
+2018-10-14T21:56:25+0530 <debug> sequence.js:1 (i) Main sequence out 176 func 
+2018-10-14T21:56:25+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:33+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 177 func 
+2018-10-14T21:56:33+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35461 }
+2018-10-14T21:56:34+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:56:34+0530 <debug> sequence.js:1 (i) Main sequence out 177 func 
+2018-10-14T21:56:34+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:35+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 178 func 
+2018-10-14T21:56:36+0530 <debug> sequence.js:1 (i) Main sequence out 178 func 
+2018-10-14T21:56:36+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:44+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 179 func 
+2018-10-14T21:56:44+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35461 }
+2018-10-14T21:56:45+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:56:45+0530 <debug> sequence.js:1 (i) Main sequence out 179 func 
+2018-10-14T21:56:45+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:46+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 180 func 
+2018-10-14T21:56:46+0530 <debug> sequence.js:1 (i) Main sequence out 180 func 
+2018-10-14T21:56:46+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:56:55+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 181 func 
+2018-10-14T21:56:55+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35463 }
+2018-10-14T21:56:55+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:56:55+0530 <debug> sequence.js:1 (i) Main sequence out 181 func 
+2018-10-14T21:56:55+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:56:56+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 182 func 
+2018-10-14T21:56:56+0530 <debug> sequence.js:1 (i) Main sequence out 182 func 
+2018-10-14T21:56:56+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:05+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 183 func 
+2018-10-14T21:57:05+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35463 }
+2018-10-14T21:57:06+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:06+0530 <debug> sequence.js:1 (i) Main sequence out 183 func 
+2018-10-14T21:57:06+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:06+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 184 func 
+2018-10-14T21:57:06+0530 <debug> sequence.js:1 (i) Main sequence out 184 func 
+2018-10-14T21:57:06+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 185 func 
+2018-10-14T21:57:16+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35465 }
+2018-10-14T21:57:16+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:16+0530 <debug> sequence.js:1 (i) Main sequence out 185 func 
+2018-10-14T21:57:16+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:16+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 186 func 
+2018-10-14T21:57:17+0530 <debug> sequence.js:1 (i) Main sequence out 186 func 
+2018-10-14T21:57:17+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:26+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 187 func 
+2018-10-14T21:57:26+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35465 }
+2018-10-14T21:57:26+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:26+0530 <debug> sequence.js:1 (i) Main sequence out 187 func 
+2018-10-14T21:57:26+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:27+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 188 func 
+2018-10-14T21:57:27+0530 <debug> sequence.js:1 (i) Main sequence out 188 func 
+2018-10-14T21:57:27+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:36+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 189 func 
+2018-10-14T21:57:36+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35465 }
+2018-10-14T21:57:36+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:36+0530 <debug> sequence.js:1 (i) Main sequence out 189 func 
+2018-10-14T21:57:37+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:37+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 190 func 
+2018-10-14T21:57:37+0530 <debug> sequence.js:1 (i) Main sequence out 190 func 
+2018-10-14T21:57:37+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:47+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 191 func 
+2018-10-14T21:57:47+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35467 }
+2018-10-14T21:57:47+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:47+0530 <debug> sequence.js:1 (i) Main sequence out 191 func 
+2018-10-14T21:57:47+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:47+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 192 func 
+2018-10-14T21:57:48+0530 <debug> sequence.js:1 (i) Main sequence out 192 func 
+2018-10-14T21:57:48+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:57:57+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 193 func 
+2018-10-14T21:57:57+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35467 }
+2018-10-14T21:57:57+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:57:57+0530 <debug> sequence.js:1 (i) Main sequence out 193 func 
+2018-10-14T21:57:57+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:57:58+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 194 func 
+2018-10-14T21:57:58+0530 <debug> sequence.js:1 (i) Main sequence out 194 func 
+2018-10-14T21:57:58+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:07+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 195 func 
+2018-10-14T21:58:07+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35469 }
+2018-10-14T21:58:07+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:07+0530 <debug> sequence.js:1 (i) Main sequence out 195 func 
+2018-10-14T21:58:07+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:08+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 196 func 
+2018-10-14T21:58:08+0530 <debug> sequence.js:1 (i) Main sequence out 196 func 
+2018-10-14T21:58:08+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:17+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 197 func 
+2018-10-14T21:58:17+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35469 }
+2018-10-14T21:58:18+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:18+0530 <debug> sequence.js:1 (i) Main sequence out 197 func 
+2018-10-14T21:58:18+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:18+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 198 func 
+2018-10-14T21:58:18+0530 <debug> sequence.js:1 (i) Main sequence out 198 func 
+2018-10-14T21:58:18+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 199 func 
+2018-10-14T21:58:28+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35469 }
+2018-10-14T21:58:28+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:28+0530 <debug> sequence.js:1 (i) Main sequence out 199 func 
+2018-10-14T21:58:28+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:28+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 200 func 
+2018-10-14T21:58:28+0530 <debug> sequence.js:1 (i) Main sequence out 200 func 
+2018-10-14T21:58:28+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:38+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 201 func 
+2018-10-14T21:58:38+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35471 }
+2018-10-14T21:58:38+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:38+0530 <debug> sequence.js:1 (i) Main sequence out 201 func 
+2018-10-14T21:58:38+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:38+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 202 func 
+2018-10-14T21:58:39+0530 <debug> sequence.js:1 (i) Main sequence out 202 func 
+2018-10-14T21:58:39+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:48+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 203 func 
+2018-10-14T21:58:48+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35471 }
+2018-10-14T21:58:49+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:49+0530 <debug> sequence.js:1 (i) Main sequence out 203 func 
+2018-10-14T21:58:49+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:49+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 204 func 
+2018-10-14T21:58:49+0530 <debug> sequence.js:1 (i) Main sequence out 204 func 
+2018-10-14T21:58:49+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:58:59+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 205 func 
+2018-10-14T21:58:59+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35471 }
+2018-10-14T21:58:59+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 206 func 
+2018-10-14T21:58:59+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:58:59+0530 <debug> sequence.js:1 (i) Main sequence out 205 func 
+2018-10-14T21:58:59+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:58:59+0530 <debug> sequence.js:1 (i) Main sequence out 206 func 
+2018-10-14T21:58:59+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:59:09+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 207 func 
+2018-10-14T21:59:09+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35473 }
+2018-10-14T21:59:09+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:59:09+0530 <debug> sequence.js:1 (i) Main sequence out 207 func 
+2018-10-14T21:59:09+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:59:09+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 208 func 
+2018-10-14T21:59:09+0530 <debug> sequence.js:1 (i) Main sequence out 208 func 
+2018-10-14T21:59:09+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:59:19+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 209 func 
+2018-10-14T21:59:19+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35473 }
+2018-10-14T21:59:19+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:59:19+0530 <debug> sequence.js:1 (i) Main sequence out 209 func 
+2018-10-14T21:59:19+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:59:19+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 210 func 
+2018-10-14T21:59:20+0530 <debug> sequence.js:1 (i) Main sequence out 210 func 
+2018-10-14T21:59:20+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:59:29+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 211 func 
+2018-10-14T21:59:29+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35473 }
+2018-10-14T21:59:30+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 212 func 
+2018-10-14T21:59:31+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:59:31+0530 <debug> sequence.js:1 (i) Main sequence out 211 func 
+2018-10-14T21:59:31+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:59:31+0530 <debug> sequence.js:1 (i) Main sequence out 212 func 
+2018-10-14T21:59:31+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:59:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 213 func 
+2018-10-14T21:59:41+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35475 }
+2018-10-14T21:59:41+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 214 func 
+2018-10-14T21:59:41+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:59:41+0530 <debug> sequence.js:1 (i) Main sequence out 213 func 
+2018-10-14T21:59:41+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:59:41+0530 <debug> sequence.js:1 (i) Main sequence out 214 func 
+2018-10-14T21:59:41+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T21:59:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 215 func 
+2018-10-14T21:59:51+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35475 }
+2018-10-14T21:59:51+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 216 func 
+2018-10-14T21:59:52+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T21:59:52+0530 <debug> sequence.js:1 (i) Main sequence out 215 func 
+2018-10-14T21:59:52+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T21:59:52+0530 <debug> sequence.js:1 (i) Main sequence out 216 func 
+2018-10-14T21:59:52+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T22:00:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 217 func 
+2018-10-14T22:00:02+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35475 }
+2018-10-14T22:00:02+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 218 func 
+2018-10-14T22:00:02+0530 <info> sync.js:121 (Immediate.<anonymous>) blockSync get block height { body: { success: false, error: 'Dapp not ready' },
+  peer: 
+   { ip: '922454529',
+     port: 9305,
+     state: 2,
+     os: 'linux4.15.0-1021-aws',
+     version: '1.3.6' } }
+2018-10-14T22:00:02+0530 <debug> sequence.js:1 (i) Main sequence out 217 func 
+2018-10-14T22:00:02+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T22:00:03+0530 <debug> sequence.js:1 (i) Main sequence out 218 func 
+2018-10-14T22:00:03+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer Dapp not ready
+2018-10-14T22:00:12+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 219 func 
+2018-10-14T22:00:12+0530 <info> sync.js:117 (Immediate.<anonymous>) get main block height { height: 35477 }
+2018-10-14T22:00:13+0530 <debug> sequence.js:1 (i) Main sequence out 219 func 
+2018-10-14T22:00:13+0530 <error> sync.js:146 (Immediate.<anonymous>) Sync#blockSync timer Failed to get blocks height: [object Object]
+2018-10-14T22:00:13+0530 <debug> sequence.js:1 (Sequence.add) Main sequence in 220 func 
+2018-10-14T22:00:13+0530 <debug> sequence.js:1 (i) Main sequence out 220 func 
+2018-10-14T22:00:13+0530 <error> sync.js:150 (Immediate.<anonymous>) Sync#transactionsSync timer { code: 'ECONNRESET' }
